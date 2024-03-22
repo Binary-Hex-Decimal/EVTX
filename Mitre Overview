@@ -1,0 +1,48 @@
+Execution:
+Arifact Type	Artifact
+Eventlog	Security/4688: A new process has been created
+Eventlog	TaskScheduler/Operational Log
+Eventlog	Microsoft-Windows-Shell-Core/Operational/9707: Command Execution Started
+Filesystem	Prefetch
+Filesystem	Scheduled Task Files
+Filesystem	Program Compatibility Assistant (PCA) - PcaAppLaunchDic.txt
+Filesystem	Detection History Files
+Filesystem	Program Compatibility Assistant (PCA) - PcaAppLaunchDic.txt
+Filesystem	AutomaticDestinations Jumplists
+Filesystem	Windows Error Reporting Files (.WER)
+Registry	AmCache.hve
+Registry	Background Activity Montitor
+Registry	Tracing Registry Keys
+Registry/Filesystem	SRUM Database
+Registry/Memory	ShimCache
+
+Persistance:
+Arifact Type	Artifact
+Eventlog	TaskScheduler/Operational Log
+Eventlog	Security/4720: A user account was created
+Eventlog	WMI-Activity/Operational/5861: New WMI Event Consumer
+Eventlog	Microsoft-Windows-Shell-Core/Operational/9707: Command Execution Started
+Eventlog	Security/7045: Service Installed
+Eventlog	Microsoft-Windows-Shell-Core/Operational/9707: Command Execution Started
+Filesystem	Scheduled Task Files
+Registry	Run/RunOnce Keys
+Registry	Image File Execution Options
+Registry	Services Registry Keys
+Registry	Image File Execution Options
+
+Lateral Movement:
+Arifact Type	Artifact
+Eventlog	TaskScheduler/Operational Log
+Eventlog	Security/4778: Session reconnected
+Eventlog	TerminalServices-RDPClient/Operational/1024: RDP ClientActiveX is trying to connect to the server
+Eventlog	Security/4648: Logon using explicit credentials
+Eventlog	Security/4624: An account was successfully logged on
+Eventlog	Security/4625: An account failed to log on
+Eventlog	Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational/1149
+Eventlog	Microsoft-Windows-TerminalServices-LocalSessionManager/Operational/21: Session logon succeeded
+Eventlog	Microsoft-Windows-TerminalServices-LocalSessionManager/Operational/24: Session has been disconnected
+Filesystem	Scheduled Task Files
+Filesystem	RDP Persistent Bitmap Cache
+Registry	Terminal Server Client Registry Keys
+
+
