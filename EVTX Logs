@@ -1,0 +1,37 @@
+Windows Event Logs:
+
+Login History:
+4624 - This event indicates an account has successfuly authenticated to the endpoint. It is logged on the destination endpoint.
+4625 - This logon event indicates an account has failed to authenticate to the endpoint. It is logged on the destination endpoint.
+4648 - This event, logged to the Security channel, indicates a logon was completed using explicit credentials.
+
+Creation:
+User:
+4720 - This event, logged to the Security channel, indicates a new user account was created on the endpoint.
+Service:
+7045 - This event, logged to the System channel, is logged when a new service is installed on the system.
+Process:
+4688 - This event, logged to the Security channel, indicates a process was created on the system.
+5861 - This event, logged to the WMI-Activity/Operational channel, is logged when a new WMI event consumer is registered on the system.
+
+RDP:
+21 - This event, logged to the Microsoft-Windows-TerminalServices-LocalSessionManager/Operational channel, is logged when an RDP connection is successfully authenticated.
+24 - This event, logged to the Microsoft-Windows-TerminalServices-LocalSessionManager/Operational channel, is logged when an RDP connection is terminated.
+1024 - This event, logged to the TerminalServices-RDPClient/Operational channel, is logged when an RDP session is attempted to a remote endpoint.
+1149 - This event, logged to the Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational channel, is logged when an RDP connection is established.
+
+Execution:
+4104 - This event is logged whenever a script is run through PowerShell.
+9707 - This event indicates that a logon task, found in Run/RunOnce Keys has executed.
+
+Network:
+8001 - This event indicates that the system has connected successfully to a wireless area network.
+8003 - This event indicates that the system has disconnected from a wireless area network.
+
+Firewall:
+2004 - This event indicates that a new firewall rule has been added to the Windows Firewall.
+2071 - This event indicates that a new firewall rule has been added to the Windows Firewall.
+2005 - This event indicates that a firewall rule has been modified. The contents of this event will contain the new parameters of the firewall rule.
+2073 - This event indicates that a Windows Defender Firewall rule has been modified.
+2006 - This event indicates that a firewall rule has been deleted.
+2052 - This event indicates that a firewall rule has been deleted.
