@@ -27,3 +27,11 @@ Execution:
 Network:
 8001 - This event indicates that the system has connected successfully to a wireless area network.
 8003 - This event indicates that the system has disconnected from a wireless area network.
+
+Firewall:
+2004 - This event indicates that a new firewall rule has been added to the Windows Firewall.
+2071 - This event indicates that a new firewall rule has been added to the Windows Firewall.
+2005 - This event indicates that a firewall rule has been modified. The contents of this event will contain the new parameters of the firewall rule.
+2073 - This event indicates that a Windows Defender Firewall rule has been modified.
+2006 - This event indicates that a firewall rule has been deleted.
+2052 - This event indicates that a firewall rule has been deleted.
