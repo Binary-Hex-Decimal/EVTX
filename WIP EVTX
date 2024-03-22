@@ -6,13 +6,10 @@ Login History:
 4648 - This event, logged to the Security channel, indicates a logon was completed using explicit credentials.
 
 Creation:
-
 User:
-4720 - New user created.
-
+4720 - This event, logged to the Security channel, indicates a new user account was created on the endpoint.
 Service:
 7045 - This event, logged to the System channel, is logged when a new service is installed on the system.
-
 Process:
 4688 - This event, logged to the Security channel, indicates a process was created on the system.
 5861 - This event, logged to the WMI-Activity/Operational channel, is logged when a new WMI event consumer is registered on the system.
