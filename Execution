@@ -1,0 +1,106 @@
+Execution Artifacts:
+--------------------
+
+----Prefetch:
+Location:%SystemRoot%\Prefetch
+
+
+----Amcache:
+The Amcache hive stores metadata regarding executables/installed programs present on an endpoint. Typically, only those that have been executed (or executables associated with installed software) will appear in this registry hive.
+
+
+Location:%SystemRoot%\AppCompat\Programs\Amcache.hve
+Additional Location(s):%SystemRoot%\AppCompat\Programs\Amcache.hve.*LOG1
+Additional Location(s):%SystemRoot%\AppCompat\Programs\Amcache.hve.*LOG2
+
+
+----Shimcache:
+ShimCache is a registry artifact of the application compatibility database to provide backwards-compatibility between operating system versions. It may provide forensic evidence of execution on a system.
+
+Live System:
+Windows XP: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility\AppCompatCache
+Windows Vista/7/8/10/11: SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache\AppCompatCache
+
+Offline system:
+File: %SystemRoot%\System32\config\SYSTEM
+Windows XP: SYSTEM\{CURRENT_CONTROL_SET}\Control\SessionManager\AppCompatibility\AppCompatCache
+Windows Vista/7/8/10: SYSTEM\{CURRENT_CONTROL_SET}\Control\Session Manager\AppCompatCache\AppCompatCache
+
+
+----SCRUM
+The SRUM database is a forensic artifact that provides evidence of execution and network activity. It is used by Windows to provide telemetry regarding applications that run on an endpoint. It provides 30-60 days of resolution.
+
+Filesystem: %SystemRoot%\System32\sru\SRUDB.dat
+Registry: SOFTWARE\Microsoft\Windows NT\Current Version\SRUM\Extensions
+
+
+----Program Compatibility Assistant (PCA):
+Program Compatibility Assistant (PCA) is a feature introduced since Windows 8 intended for application compatibility purposes. New to Windows 11 (22H2 Update) is the ability to extract detailed evidence of execution from it.
+
+Location:%SystemRoot%\AppCompat\pca\PcaAppLaunchDic.txt
+
+----Tracing Registry Keys
+Tracing registry keys can be used to indicate that a program has initiated a network connection leveraging the Windows Remote Access Server (RAS) through the rasapi32.dll and rasman.dll libraries.
+
+Live System:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing
+
+Offline system:
+File: %SystemRoot%\System32\Config\SOFTWARE
+Key: SOFTWARE\Microsoft\Tracing
+
+
+----Microsoft-Windows-Shell-Core/Operational/9707: Command Execution Started:
+This event indicates that a logon task, found in Run/RunOnce Keys has executed.
+
+Location:%SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Shell-Core%4Operational.evtx
+
+
+----AutomaticDestinations Jumplists:
+AutomaticDestinations are jumplist files created by Windows when an application is launched.
+
+Location:%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+
+
+----Background Activity Montitor:(10/11)
+The Background Activity Monitor and Desktop Activity Montior registry artifacts provide evidence of execution on an endpoint. It is only available in Windows 10 and Windows 11.
+
+Live system: Newer Windows 10 Versions
+BAM: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\state\UserSettings\{USER_SID}
+DAM: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dam\state\UserSettings\{USER_SID}
+
+Live system: Older Windows 10 Versions
+BAM: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\UserSettings\{USER_SID}
+DAM: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dam\UserSettings\{USER_SID}
+
+Offline system: Newer Windows 10 Versions
+File: %SystemRoot%\System32\config\SYSTEM
+BAM: SYSTEM\{CURRENT_CONTROL_SET}\Services\bam\state\UserSettings\{USER_SID}
+DAM: SYSTEM\{CURRENT_CONTROL_SET}\Services\dam\state\UserSettings\{USER_SID}
+
+Offline system: Older Windows 10 Versions
+File: %SystemRoot%\System32\config\SYSTEM
+BAM: SYSTEM\{CURRENT_CONTROL_SET}\Services\bam\UserSettings\{USER_SID}
+DAM: SYSTEM\{CURRENT_CONTROL_SET}\Services\dam\UserSettings\{USER_SID}
+
+
+----Scheduled Task:
+32Bit
+%SystemRoot%\System32\Tasks
+64Bit
+%SystemRoot%\SysWOW64\Tasks
+	
+Event Log:%SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-TaskScheduler%4Operational.evtx
+
+Event ID	Description							Information
+106			Scheduled Task Created				Origin Account/User
+140			Scheduled Task Updated				Origin Account/User
+141			Scheduled Task Deleted				Origin Account/User
+200			Scheduled Task Executed				Is thExecutable file path
+201			Scheduled Task Execution Completed	Executable file path
+
+
+----Windows Defender Detection History Files:
+Detection history files are an artifact present on endpoints with Windows Defender installed and with Real-Time Protection enabled. In the event that defender quarantines/removes a potentially malicious item, a detection history file is created to record the event.
+
+Location:%ProgramData%\Microsoft\Windows Defender\Scans\History\Service\DetectionHistory\[0-9]*\
