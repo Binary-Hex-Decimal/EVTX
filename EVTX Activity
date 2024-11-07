@@ -40,3 +40,17 @@ Task Schedule:
 2073 - This event indicates that a Windows Defender Firewall rule has been modified.
 2006 - This event indicates that a firewall rule has been deleted.
 2052 - This event indicates that a firewall rule has been deleted.
+
+Windows Defender:
+5000 - Enabled
+5001 - Disabled
+
+Script:
+400 - Powershell
+
+sysmon:
+1 - Process Creation
+3 - Network connections
+11 - File Create
+12,13 - Registry Events
+22 - DNS Query
