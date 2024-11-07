@@ -1,0 +1,54 @@
+Select Registry Key:
+Live System:
+HKEY_LOCAL_MACHINE\SYSTEM\Select
+
+Offline system:
+File: %SystemRoot%\System32\config\SYSTEM
+Key: SYSTEM\Select
+
+Get-ItemProperty -Path "HKLM:\SYSTEM\Select" -Name *
+
+
+Current Version:
+Live System:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+
+Offline system:
+File: %SystemRoot%\System32\config\SOFTWARE
+Key: SOFTWARE\Microsoft\Windows NT\CurrentVersion
+
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name *
+
+
+TimeZoneInformation Registry Key:
+Live System:
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+
+Offline system:
+File: %SystemRoot%\System32\config\SYSTEM
+Key: SYSTEM\{CURRENT_CONTROL_SET}\Control\TimeZoneInformation
+
+Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name *
+
+
+ComputerName Registry Key:
+Live System:
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName
+
+Offline system:
+File: %SystemRoot%\System32\config\SYSTEM
+Key: SYSTEM\{CURRENT_CONTROL_SET}\Control\ComputerName\ComputerName
+
+Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName" -Name *
+
+
+Interfaces Registry Key:
+
+Live System:
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{INTERFACE_GUID}
+
+Offline system:
+File: %SystemRoot%\System32\config\SYSTEM
+Key: SYSTEM\{CURRENT_CONTROL_SET}\Services\Tcpip\Parameters\Interfaces\{INTERFACE_GUID}
+
+Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{a7d8885d-10c1-43d4-9e1e-0a7b2678f020}" -Name *
