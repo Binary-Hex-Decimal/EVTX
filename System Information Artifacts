@@ -17,3 +17,7 @@ NETWORK INTERFACES:
 Live System: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{INTERFACE_GUID}
 Offline system: %SystemRoot%\System32\config\SYSTEM
 Powershell: Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{"Network Interface ID"}" -Name *
+
+USER PROFILES:
+Live System: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVer-sion\ProfileList\{"SID"}
+POWERSHELL: Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\*" | Select-Object -Property PSChildName, ProfileImagePath
